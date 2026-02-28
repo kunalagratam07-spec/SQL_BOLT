@@ -1,0 +1,29 @@
+# Exercise 7
+---
+
+## 1️⃣ Find the list of all buildings that have employees.
+
+```sql
+SELECT DISTINCT building
+FROM employees;
+```
+
+---
+
+## 2️⃣ Find the list of all buildings and their capacity.
+
+```sql
+SELECT building_name, capacity
+FROM buildings;
+```
+
+---
+
+## 3️⃣ List all buildings and the distinct employee roles in each building (including empty buildings).
+
+```sql
+SELECT DISTINCT b.building_name,
+    e.role
+FROM buildings b
+LEFT JOIN employees e
+ON b.building_name = e.building;
